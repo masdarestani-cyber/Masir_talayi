@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="مسیر طلایی مهاجرت - مشاوره تخصصی اخذ ویزا و مهاجرت به اروپا، کانادا و سراسر جهان. تهران">
+  <meta name="keywords" content="مهاجرت, ویزا, شنگن, کانادا, اسپانیا, فرانسه, ایتالیا, آلمان, انگلیس, سوئیس, برزیل, مهاجرت از تونس, قبرس, مسیر طلایی">
+  <title>مسیر طلایی مهاجرت | ویزا و مهاجرت به اروپا</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold: #C9A84C;
+      --gold-light: #E8C97A;
+      --gold-dark: #8B6914;
+      --navy: #0B1F3A;
+      --navy-mid: #142845;
+      --navy-light: #1E3A5F;
+      --white: #FFFFFF;
+      --off-white: #F8F6F0;
+      --text-muted: #A0A8B8;
+      --border: rgba(201,168,76,0.2);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Vazirmatn', sans-serif;
+      background: var(--navy);
+      color: var(--white);
+      overflow-x: hidden;
+    }
+
+    /* ── NAVBAR ── */
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 100;
+      background: rgba(11,31,58,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 5%;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 70px;
+    }
+    .logo {
+      font-size: 1.1rem; font-weight: 800;
+      color: var(--gold);
+      letter-spacing: 0.5px;
+    }
+    .logo span { color: var(--white); font-weight: 300; }
+    .nav-cta {
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 8px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--gold-light); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 50%, #0D2847 100%);
+      display: flex; align-items: center;
+      padding: 100px 5% 60px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; top: -50%; left: -20%;
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute; bottom: 0; right: 0;
+      width: 100%; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    .hero-content { max-width: 700px; position: relative; z-index: 1; }
+
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(201,168,76,0.12);
+      border: 1px solid var(--border);
+      color: var(--gold);
+      font-size: 0.8rem;
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 28px;
+    }
+    .hero-badge::before { content: '✦'; font-size: 0.65rem; }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.35;
+      margin-bottom: 20px;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--gold);
+    }
+    .hero p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      max-width: 560px;
+      margin-bottom: 40px;
+    }
+
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 14px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.2s;
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 14px 32px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.2);
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+
+    .hero-stats {
+      display: flex; gap: 40px; flex-wrap: wrap;
+      margin-top: 56px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border);
+    }
+    .stat-item { text-align: center; }
+    .stat-num {
+      font-size: 1.8rem; font-weight: 800;
+      color: var(--gold);
+      display: block;
+    }
+    .stat-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* ── SECTION COMMON ── */
+    section { padding: 80px 5%; }
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 16px;
+    }
+    .section-sub {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.8;
+      max-width: 560px;
+      margin-bottom: 50px;
+    }
+
+    /* ── VISAS SECTION ── */
+    .visas-section { background: var(--navy-mid); }
+
+    .visas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
+    }
+    .visa-card {
+      background: var(--navy);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px 20px;
+      transition: all 0.25s;
+      cursor: default;
+    }
+    .visa-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(201,168,76,0.12);
+    }
+    .visa-flag { font-size: 2rem; margin-bottom: 12px; display: block; }
+    .visa-name {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+    .visa-type {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* ── ROUTES SECTION ── */
+    .routes-section { background: var(--navy); }
+
+    .routes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .route-card {
+      background: var(--navy-mid);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px 24px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.25s;
+    }
+    .route-card::before {
+      content: '';
+      position: absolute; top: 0; right: 0;
+      width: 4px; height: 100%;
+      background: var(--gold);
+      opacity: 0;
+      transition: opacity 0.25s;
+    }
+    .route-card:hover { border-color: var(--gold-dark); transform: translateY(-3px); }
+    .route-card:hover::before { opacity: 1; }
+
+    .route-icon { font-size: 1.8rem; margin-bottom: 14px; }
+    .route-from {
+      font-size: 0.7rem;
+      color: var(--gold);
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .route-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+    .route-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* ── WHY US ── */
+    .whyus-section { background: var(--navy-mid); }
+
+    .whyus-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 24px;
+    }
+    .why-card {
+      padding: 30px 24px;
+      border-radius: 14px;
+      background: var(--navy);
+      border: 1px solid var(--border);
+    }
+    .why-icon {
+      width: 48px; height: 48px;
+      background: rgba(201,168,76,0.1);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 18px;
+    }
+    .why-title {
+      font-size: 1rem; font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .why-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* ── CONTACT ── */
+    .contact-section {
+      background: linear-gradient(135deg, var(--navy-mid), var(--navy));
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .contact-section::before {
+      content: '';
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(201,168,76,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .contact-section .section-sub { margin: 0 auto 40px; }
+
+    .contact-box {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      background: var(--navy);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 40px 60px;
+      position: relative;
+      z-index: 1;
+    }
+    .contact-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+    }
+    .contact-phone {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--gold);
+      letter-spacing: 2px;
+      direction: ltr;
+    }
+    .contact-actions { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+
+    .btn-call {
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 12px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-flex; align-items: center; gap: 8px;
+      transition: all 0.2s;
+    }
+    .btn-call:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+    .btn-whatsapp {
+      background: #25D366;
+      color: white;
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 12px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-flex; align-items: center; gap: 8px;
+      transition: all 0.2s;
+    }
+    .btn-whatsapp:hover { background: #1ebe5d; transform: translateY(-2px); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #07131F;
+      padding: 30px 5%;
+      text-align: center;
+      border-top: 1px solid var(--border);
+    }
+    footer p {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+    footer strong { color: var(--gold); }
+
+    /* ── FLOATING CALL ── */
+    .float-call {
+      position: fixed;
+      bottom: 24px;
+      left: 24px;
+      z-index: 999;
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 0.82rem;
+      padding: 12px 20px;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 6px 24px rgba(201,168,76,0.4);
+      display: flex; align-items: center; gap: 8px;
+      animation: pulse 2.5s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 6px 24px rgba(201,168,76,0.4); }
+      50% { box-shadow: 0 6px 36px rgba(201,168,76,0.7); }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .hero-stats { gap: 24px; }
+      .contact-box { padding: 30px 24px; }
+      .contact-phone { font-size: 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="logo">مسیر طلایی <span>مهاجرت</span></div>
+  <a href="tel:09197120861" class="nav-cta">📞 تماس بگیرید</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">بهترین مشاور مهاجرت شما</div>
+    <h1>مسیر <em>طلایی</em> مهاجرت<br>به اروپا و جهان</h1>
+    <p>با تیم متخصص ما، رویای زندگی در اروپا را به واقعیت تبدیل کنید. اخذ ویزا، برنامه‌ریزی مسیر مهاجرت و مشاوره تخصصی صفر تا صد.</p>
+    <div class="hero-actions">
+      <a href="tel:09197120861" class="btn-primary">📞 مشاوره رایگان</a>
+      <a href="#visas" class="btn-secondary">مشاهده خدمات</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <span class="stat-num">۱۲+</span>
+        <div class="stat-label">کشور مقصد</div>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">۱۰۰%</span>
+        <div class="stat-label">تعهد و صداقت</div>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">۲۴/۷</span>
+        <div class="stat-label">پشتیبانی</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISAS -->
+<section class="visas-section" id="visas">
+  <div class="section-label">خدمات ویزا</div>
+  <h2 class="section-title">اخذ ویزا به کدام کشورها؟</h2>
+  <p class="section-sub">مشاوره و پیگیری تخصصی اخذ انواع ویزا برای کشورهای اروپایی و فراتر از آن</p>
+
+  <div class="visas-grid">
+    <div class="visa-card">
+      <span class="visa-flag">🇪🇺</span>
+      <div class="visa-name">ویزای شنگن</div>
+      <div class="visa-type">کلیه کشورهای منطقه شنگن</div>
+    </div>
+    <div class="visa-card">
+      <span class="visa-flag">🇨🇦</span>
+      <div class="visa-name">ویزای کانادا</div>
+      <div class="visa-type">توریستی، تحصیلی، کاری</div>
+    </div>
+    <div class="visa-card">
+      <span class="visa-flag">🇪🇸</span>
+      <div class="visa-name">ویزای اسپانیا</div>
+      <div class="visa-type">توریستی، اقامت، کاری</div>
+    </div>
+    <div class="visa-card">
+      <span class="visa-flag">🇫🇷</span>
+      <div class="visa-name">ویزای فرانسه</div>
+      <div class="visa-type">کوتاه‌مدت و بلندمدت</div>
+    </div>
+    <div class="visa-card">
+      <span class="visa-flag">🇮🇹</span>
+      <div class="visa-name">ویزای ایتالیا</div>
+      <div class="visa-type">توریستی، تحصیلی</div>
+    </div>
+    <div class="visa-card">
+      <span class="visa-flag">🇬🇧</span>
+      <div class="visa-name">ویزای انگلیس</div>
+      <div class="visa-type">Standard Visitor Visa</div>
+    </div>
+    <div class="visa-card">
+      <span class="visa-flag">🇩🇪</span>
+      <div class="visa-name">ویزای آلمان</div>
+      <div class="visa-type">توریستی، کاری، تحصیلی</div>
+    </div>
+    <div class="visa-card">
+      <span class="visa-flag">🇨🇭</span>
+      <div class="visa-name">ویزای سوئیس</div>
+      <div class="visa-type">شنگن سوئیس</div>
+    </div>
+    <div class="visa-card">
+      <span class="visa-flag">🇧🇷</span>
+      <div class="visa-name">ویزای برزیل</div>
+      <div class="visa-type">توریستی، تجاری</div>
+    </div>
+    <div class="visa-card">
+      <span class="visa-flag">🇨🇾</span>
+      <div class="visa-name">اقامت قبرس جنوبی</div>
+      <div class="visa-type">منطقه یورو — EU</div>
+    </div>
+  </div>
+</section>
+
+<!-- ROUTES -->
+<section class="routes-section" id="routes">
+  <div class="section-label">مسیرهای مهاجرت</div>
+  <h2 class="section-title">مسیرهای تخصصی ما</h2>
+  <p class="section-sub">راهنمایی کامل مسیرهای مهاجرتی از صفر تا رسیدن به مقصد</p>
+
+  <div class="routes-grid">
+    <div class="route-card">
+      <div class="route-icon">🚢</div>
+      <div class="route-from">مسیر دریایی</div>
+      <div class="route-title">تور دریایی به اروپا</div>
+      <div class="route-desc">مسیرهای دریایی امن و قانونی برای ورود به اروپا همراه با برنامه‌ریزی کامل</div>
+    </div>
+    <div class="route-card">
+      <div class="route-icon">🌍</div>
+      <div class="route-from">تونس ← ایتالیا</div>
+      <div class="route-title">مسیر مهاجرت از تونس</div>
+      <div class="route-desc">برنامه‌ریزی دقیق مسیر مهاجرت از تونس به ایتالیا با راهنمایی کامل</div>
+    </div>
+    <div class="route-card">
+      <div class="route-icon">🛤️</div>
+      <div class="route-from">ترکیه ← اروپا</div>
+      <div class="route-title">مسیر مهاجرت از ترکیه</div>
+      <div class="route-desc">مشاوره کامل مسیر مهاجرتی از ترکیه به کشورهای اروپایی</div>
+    </div>
+    <div class="route-card">
+      <div class="route-icon">🏛️</div>
+      <div class="route-from">یونان ← اروپا</div>
+      <div class="route-title">مسیر مهاجرت از یونان</div>
+      <div class="route-desc">راهنمایی گام به گام مسیر مهاجرت از یونان به سایر کشورهای اروپایی</div>
+    </div>
+    <div class="route-card">
+      <div class="route-icon">❄️</div>
+      <div class="route-from">روسیه ← اسکاندیناوی</div>
+      <div class="route-title">مسیر روسیه به فنلاند و نروژ</div>
+      <div class="route-desc">برنامه‌ریزی مسیر مهاجرتی از روسیه به فنلاند و نروژ</div>
+    </div>
+    <div class="route-card">
+      <div class="route-icon">💼</div>
+      <div class="route-from">صفر تا صد</div>
+      <div class="route-title">مشاوره کامل کار در اروپا</div>
+      <div class="route-desc">از پیدا کردن کار تا اخذ ویزای کاری و اقامت — همه چیز با ما</div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="whyus-section" id="about">
+  <div class="section-label">چرا ما؟</div>
+  <h2 class="section-title">مسیر طلایی، انتخاب هوشمندانه</h2>
+  <p class="section-sub">ما تنها یک آژانس مهاجرتی نیستیم — ما همراه شما در تمام مسیر هستیم</p>
+
+  <div class="whyus-grid">
+    <div class="why-card">
+      <div class="why-icon">🎯</div>
+      <div class="why-title">مشاوره تخصصی</div>
+      <div class="why-desc">تیم متخصص ما با تجربه واقعی در مهاجرت، بهترین راه را برای شما پیدا می‌کند</div>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🔒</div>
+      <div class="why-title">اطلاعات محرمانه</div>
+      <div class="why-desc">تمام اطلاعات شما با بالاترین سطح امنیت و محرمانگی نگهداری می‌شود</div>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">📋</div>
+      <div class="why-title">پیگیری کامل پرونده</div>
+      <div class="why-desc">از اولین مشاوره تا دریافت ویزا، هر قدم را با شما همراهیم</div>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">💬</div>
+      <div class="why-title">پشتیبانی ۲۴ ساعته</div>
+      <div class="why-desc">هر سوالی داشتید، در هر ساعتی از شبانه‌روز در دسترس هستیم</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="section-label">تماس با ما</div>
+  <h2 class="section-title">همین الان مشاوره رایگان بگیرید</h2>
+  <p class="section-sub">یک تماس کافیه — تیم ما آماده پاسخگویی به تمام سوالات شماست</p>
+
+  <div class="contact-box">
+    <div class="contact-label">شماره تماس و واتساپ</div>
+    <div class="contact-phone">0919-712-0861</div>
+    <div class="contact-actions">
+      <a href="tel:09197120861" class="btn-call">📞 تماس مستقیم</a>
+      <a href="https://wa.me/989197120861" target="_blank" class="btn-whatsapp">💬 واتساپ</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p><strong>مسیر طلایی مهاجرت</strong> — تهران، ایران<br>
+  مشاوره اخذ ویزا و مهاجرت به اروپا، کانادا و سراسر جهان<br>
+  <span style="font-size:0.72rem;opacity:0.6">© ۱۴۰۴ تمامی حقوق محفوظ است</span></p>
+</footer>
+
+<!-- FLOATING CALL BUTTON -->
+<a href="tel:09197120861" class="float-call">📞 تماس فوری</a>
+
+</body>
+</html>
